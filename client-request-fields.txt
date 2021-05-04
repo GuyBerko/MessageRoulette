@@ -1,0 +1,16 @@
+connect:
+host: http://localhost:5000,
+path: /socket.io
+auth: { token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiZW1haWwiOiJhYmpoZGNAYWN2LmNvbSIsImlhdCI6MTYxOTc4MzgyMX0.oF_SWBnyxr1bVVXFW9G8KmqUIX_SA0cMkWQdSOfAcEo' }
+
+** auth token is required for apin, wild and blast.
+** the token can be get after login or register fron event called 'authenticated'
+** or you can use the one above. 
+
+API:
+socket.emit('spin');
+socket.emit('wild', usersToEmit: Int);
+socket.emit('blast');
+socket.emit('register', {email: String, password: String});
+socket.emit('login', {email: String, password: String});
+socket.on('authenticated', token: String); 
